@@ -7,6 +7,9 @@ body { background: var(--color-background); color: var(--color-text); font-famil
 .section { padding: var(--space-8) 0; }
 
 .logo { font-family: var(--font-serif); font-size: var(--fs-h4); font-weight: 600; }
+.brand { display: inline-flex; align-items: center; gap: var(--space-3); text-decoration: none; color: inherit; }
+.brand-mark { width: var(--space-6); height: var(--space-6); border-radius: var(--radius-s); display: block; }
+.brand-name { font-family: var(--font-serif); font-size: var(--fs-h4); font-weight: 600; }
 
 /* Typography */
 .h1 { font-family: var(--font-serif); font-size: var(--fs-h1); line-height: var(--lh-heading); letter-spacing: var(--ls-headings); margin: 0 0 var(--space-4); }
@@ -15,7 +18,7 @@ body { background: var(--color-background); color: var(--color-text); font-famil
 .small { font-size: var(--fs-small); }
 
 /* Buttons */
-.button { display: inline-block; padding: var(--space-3) var(--space-5); border-radius: var(--radius-s); font-weight: 600; letter-spacing: var(--ls-button); text-decoration: none; border: 1px solid transparent; transition: background .2s ease, color .2s ease, border-color .2s ease; }
+.button { display: inline-block; padding: var(--space-3) var(--space-5); border-radius: var(--radius-s); font-weight: 600; letter-spacing: var(--ls-button); text-decoration: none; border: var(--border-1) solid transparent; transition: background .2s ease, color .2s ease, border-color .2s ease; }
 .button-primary { background: var(--color-primary); color: var(--color-background); box-shadow: var(--shadow-s); }
 .button-primary:hover { background: var(--color-button-primary-hover); }
 .button-secondary { background: var(--color-secondary); color: var(--color-background); }
@@ -23,20 +26,26 @@ body { background: var(--color-background); color: var(--color-text); font-famil
 .button-tertiary:hover { background: var(--color-button-tertiary-hover); }
 
 /* Cards */
-.card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-m); padding: var(--space-5); box-shadow: var(--shadow-m); }
+.card { background: var(--color-surface); border: var(--border-1) solid var(--color-border); border-radius: var(--radius-m); padding: var(--space-5); box-shadow: var(--shadow-m); }
 .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--space-4); }
 
 /* Nav */
-.navbar { background: var(--color-background); border-bottom: 1px solid var(--color-border); position: sticky; top: 0; z-index: 10; }
-.navbar .inner { display: flex; align-items: center; justify-content: space-between; height: var(--space-7); }
-.navbar a { color: var(--color-text); text-decoration: none; margin: 0 var(--space-3); font-weight: 600; }
+.navbar { background: var(--color-background); border-bottom: var(--border-1) solid var(--color-border); position: sticky; top: 0; z-index: 10; }
+.navbar .inner { display: flex; align-items: center; justify-content: space-between; height: var(--space-7); gap: var(--space-4); position: relative; }
+.navbar a { color: var(--color-text); text-decoration: none; font-weight: 600; }
 .navbar a:hover { color: var(--color-primary); text-decoration: underline; }
+.nav-toggle { display: none; align-items: center; justify-content: center; height: var(--space-6); width: var(--space-6); border-radius: var(--radius-s); border: var(--border-1) solid var(--color-border); background: transparent; color: var(--color-text); padding: 0; }
+.nav-toggle:focus { outline: none; border-color: var(--color-secondary); box-shadow: var(--shadow-focus); }
+.nav-toggle-icon { width: var(--space-5); height: var(--space-5); display: grid; gap: var(--space-1); align-content: center; }
+.nav-toggle-line { display: block; height: var(--border-2); background: currentColor; border-radius: var(--radius-s); }
+.nav-menu { display: flex; align-items: center; gap: var(--space-4); }
+.nav-links { display: flex; align-items: center; gap: var(--space-4); }
 
 /* Forms */
-.input { width: 100%; height: var(--space-6); padding: var(--space-2) var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-s); font-family: var(--font-sans); }
+.input { width: 100%; height: var(--space-6); padding: var(--space-2) var(--space-3); border: var(--border-1) solid var(--color-border); border-radius: var(--radius-s); font-family: var(--font-sans); }
 .input:focus { outline: none; border-color: var(--color-secondary); box-shadow: var(--shadow-focus); }
 .label { display: block; font-weight: 600; margin-bottom: var(--space-2); }
-.textarea { width: 100%; min-height: var(--space-8); padding: var(--space-2) var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-s); font-family: var(--font-sans); resize: vertical; }
+.textarea { width: 100%; min-height: var(--space-8); padding: var(--space-2) var(--space-3); border: var(--border-1) solid var(--color-border); border-radius: var(--radius-s); font-family: var(--font-sans); resize: vertical; }
 .textarea:focus { outline: none; border-color: var(--color-secondary); box-shadow: var(--shadow-focus); }
 .form-grid { display: grid; gap: var(--space-4); }
 
@@ -53,3 +62,10 @@ body { background: var(--color-background); color: var(--color-text); font-famil
 .mt-4 { margin-top: var(--space-4); }
 .mt-6 { margin-top: var(--space-6); }
 .center { text-align: center; }
+
+@media (max-width: 48em) {
+  .brand-name { display: none; }
+  .nav-toggle { display: inline-flex; }
+  .nav-menu { position: absolute; top: var(--space-7); left: 0; right: 0; background: var(--color-background); border-bottom: var(--border-1) solid var(--color-border); padding: var(--space-4); }
+  .nav-links { flex-direction: column; align-items: flex-start; }
+}

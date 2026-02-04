@@ -37,6 +37,10 @@
   --shadow-m: 0 4px 12px rgba(0,0,0,0.05);
   --shadow-focus: 0 0 0 3px rgba(31,78,121,0.2);
 
+  /* Borders */
+  --border-1: 1px;
+  --border-2: 2px;
+
   /* Layout */
   --container-max: 1280px;
 }

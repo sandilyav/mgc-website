@@ -5,6 +5,9 @@
   if (!toggle || !menu) return;
 
   const openClass = 'nav-open';
+  const mobileMq = window.matchMedia('(max-width: 48em)');
+
+  const isMobile = () => mobileMq.matches;
 
   const setExpanded = (expanded) => {
     toggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
@@ -12,15 +15,28 @@
     menu.hidden = !expanded;
   };
 
-  setExpanded(false);
+  const syncForViewport = () => {
+    if (isMobile()) {
+      setExpanded(false);
+      return;
+    }
+
+    toggle.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove(openClass);
+    menu.hidden = false;
+  };
+
+  syncForViewport();
 
   toggle.addEventListener('click', () => {
+    if (!isMobile()) return;
     const expanded = toggle.getAttribute('aria-expanded') === 'true';
     setExpanded(!expanded);
   });
 
   document.addEventListener('keydown', (e) => {
     if (e.key !== 'Escape') return;
+    if (!isMobile()) return;
     const expanded = toggle.getAttribute('aria-expanded') === 'true';
     if (!expanded) return;
     setExpanded(false);
@@ -34,4 +50,6 @@
       setExpanded(false);
     }
   });
+
+  mobileMq.addEventListener('change', syncForViewport);
 })();
