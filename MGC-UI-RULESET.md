@@ -186,8 +186,3 @@ You must:
 Violation of these rules is considered an error.
 
 
-
-Just say:
-“Generate the Windsurf system prompt”
-or
-“Generate the full package (prompt + tokens + components + structure)”
