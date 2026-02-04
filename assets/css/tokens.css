@@ -3,13 +3,22 @@
   --color-primary: #8B1E24; /* Gymkhana Crimson */
   --color-secondary: #1F4E79; /* Gymkhana Blue */
   --color-background: #F6F4EF; /* Heritage Ivory */
+  --color-surface: #FFFEFC; /* Warm surface (no pure white) */
   --color-text: #2B2B2B; /* Club Charcoal */
   --color-border: #B8B8B5; /* Stone Grey */
+  --color-muted-bg: #E5E5E3; /* Mist Grey */
   --color-accent: #C6A75E; /* Heritage Gold (sparingly) */
   --color-error: #B03A3E; /* Muted Crimson */
   --color-info-bg: #EDF3F8;
   --color-warning-bg: #FAF4E3;
   --color-error-bg: #F8EDEE;
+
+  --color-link: var(--color-secondary);
+  --color-footer-bg: var(--color-text);
+  --color-footer-text: var(--color-background);
+
+  --color-button-primary-hover: #73181D;
+  --color-button-tertiary-hover: var(--color-muted-bg);
 
   /* Typography */
   --font-serif: 'Playfair Display', 'Libre Baskerville', serif;
@@ -26,6 +35,11 @@
   --radius-s: 6px; --radius-m: 12px;
   --shadow-s: 0 2px 4px rgba(0,0,0,0.08);
   --shadow-m: 0 4px 12px rgba(0,0,0,0.05);
+  --shadow-focus: 0 0 0 3px rgba(31,78,121,0.2);
+
+  /* Borders */
+  --border-1: 1px;
+  --border-2: 2px;
 
   /* Layout */
   --container-max: 1280px;

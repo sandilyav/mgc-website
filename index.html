@@ -11,13 +11,27 @@
 <body>
   <header class="navbar">
     <div class="inner container">
-      <div class="logo" style="font-family: var(--font-serif); font-size: 22px; font-weight: 600;">Madras Gymkhana Club</div>
-      <nav>
-        <a href="history.html">Heritage</a>
-        <a href="office-bearers.html">Governance</a>
-        <a href="category/tennis/index.html">Facilities</a>
-        <a href="club-profile.html">About</a>
-        <a href="#" title="Member login is separate" aria-label="Member Login">Member Login</a>
+      <a class="brand" href="index.html" aria-label="Madras Gymkhana Club">
+        <img class="brand-mark" src="assets/img/mgc-logo.jpg" alt="" />
+        <span class="brand-name">Madras Gymkhana Club</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" data-nav-toggle>
+        <span class="nav-toggle-icon" aria-hidden="true">
+          <span class="nav-toggle-line"></span>
+          <span class="nav-toggle-line"></span>
+          <span class="nav-toggle-line"></span>
+        </span>
+      </button>
+
+      <nav class="nav-menu" data-nav-menu hidden>
+        <div class="nav-links">
+          <a href="history.html">Heritage</a>
+          <a href="category/tennis/index.html">Facilities</a>
+          <a href="club-profile.html">Membership</a>
+          <a href="#" title="Events are published separately">Events</a>
+          <a href="#" title="Member login is separate" aria-label="Member Login">Member Login</a>
+        </div>
       </nav>
     </div>
   </header>
@@ -75,5 +89,6 @@
       <div class="center small">© Madras Gymkhana Club • Chennai • Since 1884</div>
     </div>
   </footer>
+  <script defer src="assets/js/site.js"></script>
 </body>
 </html>
