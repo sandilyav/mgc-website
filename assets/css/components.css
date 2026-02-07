@@ -50,7 +50,7 @@ body { background: var(--color-background); color: var(--color-text); font-famil
 .form-grid { display: grid; gap: var(--space-4); }
 
 /* Hero */
-.hero { padding: var(--space-8) 0; }
+.hero { padding: var(--space-8) 0 var(--space-2); }
 .hero .headline { max-width: 100%; }
 .hero .actions { margin-top: var(--space-5); display: flex; gap: var(--space-3); flex-wrap: wrap; }
 
